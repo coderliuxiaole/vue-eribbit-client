@@ -1,9 +1,10 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <p>{{ $store.getters.userName }}</p>
+    <p>{{ $store.getters.userSex }}</p>
+    <button @click="updateName">设置名称</button>
+    <button @click="getUserName">获取名称</button>
   </div>
-  <router-view/>
 </template>
 
 <style lang="less">
@@ -28,3 +29,23 @@
   }
 }
 </style>
+<script>
+import { useStore } from "vuex";
+export default {
+  setup() {
+    const store = useStore();
+    const { dispatch, commit } = store;
+
+    // 更新名称
+    const updateName = () => {
+      commit("user/updateName", "111");
+    };
+
+    // 获取名称
+    const getUserName = () => {
+      dispatch("user/getUserName");
+    };
+    return { store, updateName, getUserName };
+  },
+};
+</script>
