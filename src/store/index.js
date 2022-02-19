@@ -7,15 +7,7 @@ import getters from "@/store/getters.js";
 // Vuex 本地存储
 import createPersistedState from "vuex-persistedstate";
 
-// 缓存加密
-import SecureLS from "secure-ls";
-
-// 加密配置
-const ls = new SecureLS({
-  encodingType: "aes",
-  isCompression: false,
-  encryptionSecret: "old-beauty",
-});
+import ls from "@/utils/SecureLS.js";
 
 import { createStore } from "vuex";
 

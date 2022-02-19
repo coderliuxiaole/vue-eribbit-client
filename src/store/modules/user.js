@@ -4,24 +4,28 @@ export default {
     return {
       userName: "刘嘉乐",
       userSex: "男",
-      userInfo: {
+      profile: {
         userName: "111",
         userAge: "111",
         userSex: "nv ",
+        token: "",
       },
     };
   },
 
   mutations: {
-    updateName(state, payload) {
-      state.userName = payload;
+    setProfile(state, payload) {
+      state.profile = payload;
     },
   },
 
   actions: {
     getUserName({ commit }) {
       setTimeout(() => {
-        commit("updateName", "1312321312");
+        commit("setProfile", {
+          userName: "123123",
+          userSex: "男",
+        });
       }, 200);
     },
   },
