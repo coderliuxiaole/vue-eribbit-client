@@ -1,9 +1,9 @@
 <template>
-  <div class="contianer">123123123</div>
+  <div class="contianer">主页组件</div>
   <RouterView />
 </template>
 <style scoped lang="less">
 .contianer {
-  .hoverShadow();
+  .hoverShadow ();
 }
 </style>

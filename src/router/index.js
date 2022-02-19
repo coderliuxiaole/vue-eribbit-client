@@ -9,12 +9,6 @@ const routes = [
       {
         path: "/",
         component: Home,
-        children: [
-          {
-            path: "/",
-            component: () => import("@/views/index/son"),
-          },
-        ],
       },
     ],
   },
