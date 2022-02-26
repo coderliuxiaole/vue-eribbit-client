@@ -3,6 +3,8 @@ import home from "@/store/modules/home.js";
 import goods from "@/store/modules/goods.js";
 import cart from "@/store/modules/cart.js";
 import member from "@/store/modules/member.js";
+import category from "@/store/modules/category.js";
+
 import getters from "@/store/getters.js";
 // Vuex 本地存储
 import createPersistedState from "vuex-persistedstate";
@@ -19,6 +21,7 @@ export default createStore({
     goods,
     cart,
     member,
+    category,
   },
   getters,
   plugins: [

@@ -18,8 +18,8 @@ request.interceptors.request.use(
   }
 );
 
-request.interceptors.response(
-  (response) => {},
+request.interceptors.response.use(
+  (res) => res.data,
   (err) => {
     if (err.response && err.response.status === 401) {
       store.commit("user/setProfile", {});
@@ -29,3 +29,11 @@ request.interceptors.response(
     return new Promise.reject(err);
   }
 );
+
+export default (url, method, data) => {
+  return request({
+    url,
+    method,
+    [method.toLowerCase() === "get" ? "params" : "data"]: data,
+  });
+};
